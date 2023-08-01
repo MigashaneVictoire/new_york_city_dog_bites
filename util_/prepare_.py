@@ -55,6 +55,9 @@ def wrangle_dog_bites():
     # set the date to be the indexinf column
     dogs = dogs.set_index("dateofbite").sort_index()
     
+    # Engineer the target into daily bits counts
+    dogs = dogs.resample('D').sum()
+    
     # create a year, month, day column from the index
     dogs["year"] = dogs.index.year
     dogs["month"] = dogs.index.month_name()
