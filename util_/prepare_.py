@@ -61,10 +61,10 @@ def wrangle_dog_bites():
     # create a year, month, day column from the index
     dogs["year"] = dogs.index.year
     dogs["month"] = dogs.index.month_name()
-    dogs["day"] = dogs.index.day_name()
-
-    dogs["month_number"] = dogs.index.month
-    dogs["weekday_number"] = dogs.index.weekday
+    dogs["week day"] = dogs.index.day_name()
+    dogs["day of month"] = dogs.index.day
+    dogs["month number"] = dogs.index.month
+    dogs["weekday number"] = dogs.index.weekday
     
     # split data
     train = dogs[:"2018"]
