@@ -10,17 +10,17 @@ by: Victoire Migashane
 ---
 
 # Project Description
-This project aims to build a model using tha predicts dog bites for the city of New York.
+This project aims to build a model that predicts dog bite for the city of New York.
 
 # Project Goal
-To predict the number of dog bites in New York City for the next 3-months with reasonable accuracy.
+To predict the number of dog bites in New York City for the next week with reasonable accuracy. Because it takes about 2 to 10 days to die from the infection with no medical attention.
 
 **Audience and importance**
 
 This goal is relevant because it can help authorities and relevant stakeholders to prepare for potential increases in dog bites and allocate resources accordingly to mitigate risks.
 
 # Initial Thoughts
-Due to limited domain knowledge of the chemical properties of wine, feature selection may be the best option in selecting most important features for the model. 
+Do to the stracture of the data, I will need to feature engineer a column to represent my bites.
 
 # The Plan
   * Acquire data from Data.World
@@ -41,12 +41,11 @@ Due to limited domain knowledge of the chemical properties of wine, feature sele
     - Use human-based splitting.
       
   * Explore the data
-    * Use Recursive Feature Elimination to determine best features for wine quality
-    * Answer the questions:
-        * Does the average quality score differ between red or white wines?
-        * Is there a relationship between volatile acidity and density?
-        * What does clustering show us about this correlation?
-        * Is there a relationship between density and alcohol level?
+    * Use datetime resampling to explore diffent instances.
+        * Are there any noticeable trends in the number of dog bites over time?
+        * Do dog bites exhibit seasonal patterns? Are certain months or seasons associated with a higher number of incidents?
+        * Are there specific days of the week when dog bites are more frequent than others? Do weekends or weekdays show different patterns?
+        * **What impact does dog bite have in differnt locations?
         * Is there a relationship between volatile acidity and free sulfur dioxide?
         
   * Develop a model to predict wine quality score
@@ -78,6 +77,7 @@ The following is a data dictionary for the columns in the DOHMH dog bite dataset
 
 | Column Name    | Description                                          | Data Type |
 |----------------|------------------------------------------------------|-----------|
+| borough     | Borough in New York City where the incident occurred. | String    |
 | bite           | The number of dog bite incidents reported for a day. | Integer   |
 | year           | The year of the dog bite incident.                  | Integer   |
 | month          | The name of the month of the dog bite incident.     | String    |
@@ -92,13 +92,14 @@ The following is a data dictionary for the columns in the DOHMH dog bite dataset
   * Run the final_report notebook
 
 # Conclusions
-  * Decision Tree is the best performing model with approximately 72% accuracy on unseen data.
-  * However, this accuracy only applies to the broad categories of low quality wine (quality score of < = 5) and high quality wine (quality score of > = 6)
+  * I was not able to beat my base model (moving average) which resulted in a () rmse and predicting with in () range of the actual bite couts weekly.
 
 # Next Steps
-  * Develop a model that can predict a specific quality score. 
+- Was the dog a neutered or not, to check the impact of time before medical attention.
+- What affect does the dogs age have on bites
 
 # Recommendations
-  * If the current target groups of low vs high quality wine is sufficient, implement this model.
-  * Search for data that is from California wines because the location where the grapes and wine is produced may impact the physiochemical properties.
+- Use my model if you want to find bi-weekly changes in dog bite.
+- Local authorities to be on high alert in the (boroughs) and alocate more resorces in these rejons of the city.
+- To avoid giving random rabies choots after dog bite, it's important for the local authorities to on high alert, but it's also the resonsibility for the person beat to report the bite sooner to avoid the spread of the infection.
   
