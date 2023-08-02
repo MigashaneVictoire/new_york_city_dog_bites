@@ -41,20 +41,12 @@ Do to the stracture of the data, I will need to feature engineer a column to rep
     - Use human-based splitting.
       
   * Explore the data
-    * Use datetime resampling to explore diffent instances.
+    * Use datetime weekly resampling to explore diffent instances.
         * Are there any noticeable trends in the number of dog bites over time?
         * Do dog bites exhibit seasonal patterns? Are certain months or seasons associated with a higher number of incidents?
         * Are there specific days of the week when dog bites are more frequent than others? Do weekends or weekdays show different patterns?
-        * **What impact does dog bite have in differnt locations?
-        * Is there a relationship between volatile acidity and free sulfur dioxide?
-        
-  * Develop a model to predict wine quality score
-    * Use accuracy as my evaluation metric.
-    * Baseline will be the mode of quality score.
-    * Target variable was binned to improve model performance.
-        * Low Score Wine: Quality Score of 5 and Lower
-        * High Score Wine: Quality Score of 6 and Higher
-   
+        * What impact does dog bite have in differnt locations?
+  
   * Make conclusions.
 
 # Data Dictionary
@@ -78,12 +70,7 @@ The following is a data dictionary for the columns in the DOHMH dog bite dataset
 | Column Name    | Description                                          | Data Type |
 |----------------|------------------------------------------------------|-----------|
 | borough     | Borough in New York City where the incident occurred. | String    |
-| bite           | The number of dog bite incidents reported for a day. | Integer   |
-| year           | The year of the dog bite incident.                  | Integer   |
-| month          | The name of the month of the dog bite incident.     | String    |
-| day            | The day of the month of the dog bite incident.      | Integer   |
-| month_number   | The numeric representation of the month (1 to 12).  | Integer   |
-| weekday_number | The numeric representation of the day of the week (0: Monday, 6: Sunday). | Integer   |
+| bite           | The number of dog bite incidents reported for a day. | Integer  |
 
 # Steps to Reproduce
   * Clone this repo
@@ -92,14 +79,13 @@ The following is a data dictionary for the columns in the DOHMH dog bite dataset
   * Run the final_report notebook
 
 # Conclusions
-  * I was not able to beat my base model (moving average) which resulted in a () rmse and predicting with in () range of the actual bite couts weekly.
+  * I was not able to beat my base model (moving average) which resulted in a () RMSE and predicting within () range of the actual bite counts weekly.
 
 # Next Steps
-- Was the dog a neutered or not, to check the impact of time before medical attention.
-- What affect does the dogs age have on bites
+- Was the dog neutered or not, to check the impact of time before medical attention.
+- What effect does the dog's age have on bites
 
 # Recommendations
-- Use my model if you want to find bi-weekly changes in dog bite.
-- Local authorities to be on high alert in the (boroughs) and alocate more resorces in these rejons of the city.
-- To avoid giving random rabies choots after dog bite, it's important for the local authorities to on high alert, but it's also the resonsibility for the person beat to report the bite sooner to avoid the spread of the infection.
-  
+- Use my model if you want to find bi-weekly changes in dog bites.
+- Local authorities to be on high alert in the (boroughs) and allocate more resources in these regions of the city.
+- To avoid giving random rabies ingection after a dog bite, the local authorities need to be on high alert, but it's also the responsibility for the person beat to report the bite sooner to avoid the spread of the infection.
