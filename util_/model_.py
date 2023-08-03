@@ -79,36 +79,38 @@ def append_to_eval(model, target):
                "rmse":[rmse]})
     return pd.concat([eval_df, res_dict])
 
-def final_results_non_auto():
-    """
-    Goal: return the best rmse for each of the models
-    """
-    md = pd.DataFrame({"Model": ["Moving average 23wk", "Holt linear trend", 
-                        "Holt seasonal trend", "Previous cycle"],
-              "RMSE":[16.449, 38.744, 0, 21.760]})
-
-    colors = ["green", "red", "orange", "orange"]
-    plt.figure(figsize=(8,3))
-    sns.barplot(data= md, x="Model", y='RMSE', palette=colors)
-    plt.title("Model RMSE weekly")
-    return plt.gcf()
-
 def get_best_model():
     """
     Goal: return the best visual
     """
     md = pd.DataFrame({"Model": ["Moving average 23wk", "Holt linear trend", 
                         "Holt seasonal trend", "Previous cycle"],
-              "RMSE":[16.449, 38.744, 0, 21.760]})
+              "RMSE":[16, 38, 17, 21]})
 
     colors = ["blue", "gray", "gray", "gray"]
     plt.figure(figsize=(8,3))
-    sns.barplot(data= md, x="Model", y='RMSE', palette=colors)
+    ax = sns.barplot(data= md, x="Model", y='RMSE', palette=colors)
     plt.title("Model RMSE weekly")
 
     # Annotate each bar with its corresponding value
     for index, value in enumerate(md['RMSE']):
-        ax.text(index, value, str(value), ha='center', va='bottom'
+        ax.text(index, value, str(value), ha='center', va='bottom')
+    return plt.gcf()
+
+def get_final_best_model():
+    """
+    Goal: return the best visual
+    """
+    md = pd.DataFrame({"Model": ["Moving average 23wk", "Moving average 23wk test"], "RMSE":[16, 15]})
+
+    colors = ["gray", "blue"]
+    plt.figure(figsize=(8,3))
+    ax = sns.barplot(data= md, x="Model", y='RMSE', palette=colors)
+    plt.title("Test 23-weeks Moving Average RMSE")
+
+    # Annotate each bar with its corresponding value
+    for index, value in enumerate(md['RMSE']):
+        ax.text(index, value, str(value), ha='center', va='bottom')
     return plt.gcf()
 
 

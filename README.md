@@ -1,4 +1,4 @@
-# <a name="top"></a>Dog Bite Forcasting
+# <a name="top"></a>Dog Bite Forecasting
 
 by: Victoire Migashane
 
@@ -47,6 +47,13 @@ Do to the stracture of the data, I will need to feature engineer a column to rep
         * Are there specific days of the week when dog bites are more frequent than others? Do weekends or weekdays show different patterns?
         * What impact does dog bite have in differnt locations?
   
+  * Model with the following timeseries models.
+  
+  - Moving average
+  - Holt linear model
+  - Holt seasonal model
+  - Previous cycle
+  
   * Make conclusions.
 
 # Data Dictionary
@@ -79,13 +86,14 @@ The following is a data dictionary for the columns in the DOHMH dog bite dataset
   * Run the final_report notebook
 
 # Conclusions
-  * I was not able to beat my base model (moving average) which resulted in a () RMSE and predicting within () range of the actual bite counts weekly.
+- I failed to beat my baseline model (Moving Average), by 1 weekly bites. This baseline model performed with a 16 RMSE and my closes non best line model (Holts Seasonal Trend) had a 17 RMSE.
 
 # Next Steps
-- Was the dog neutered or not, to check the impact of time before medical attention.
-- What effect does the dog's age have on bites
+- College more data then achieve a working model on the weekly or monthly resamples.
+- How long after getting bitten did they wait before receiving medical attention?
+- What effect does the dog's age have on bites?
 
 # Recommendations
-- Use my model if you want to find bi-weekly changes in dog bites.
-- Local authorities to be on high alert in the (boroughs) and allocate more resources in these regions of the city.
-- To avoid giving random rabies ingection after a dog bite, the local authorities need to be on high alert, but it's also the responsibility for the person beat to report the bite sooner to avoid the spread of the infection.
+- Do not use this model to forecast changes in weekly dog bites, however, I recommend the local authorities to remain diligent and on high alert during the weekend and especially more flexible in the summer because that's when the data shows high bite rates. 
+
+- I also recommend for necessary resources to distributed mainly in Queens, Manhattan, and Brooklyn to help with incoming emergencies.

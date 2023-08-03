@@ -72,7 +72,7 @@ def get_high_month():
     """
     # name of month to choose from
     x_labes = x_labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    colors = ['blue', 'blue', 'blue', 'orange', 'red', 'red', 'red', 'red', 'orange', 'orange', 'orange', 'blue']
+    colors = ['gray', 'gray', 'gray', 'orange', 'red', 'red', 'red', 'red', 'orange', 'orange', 'orange', 'gray']
 
    # Yearly mean bits
     plt.figure(figsize=(7,3))
@@ -91,7 +91,7 @@ def get_week_diff():
     """
     # name of month to choose from
     x_labels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    colors = ['orange', 'orange', 'orange', 'orange', 'orange', 'red', 'red']
+    colors = ['gray', 'gray', 'gray', 'gray', 'gray', 'red', 'red']
     # Yearly mean bits
     plt.figure(figsize=(7,3))
     train.groupby("week day number").bite.mean().plot(kind="bar", color=colors)
@@ -107,7 +107,7 @@ def get_borough():
     Return plot for answering the following quesion:
         - What impact does dog bite have in differnt locations?
     """
-    colors = ['red', 'red', 'red', 'orange', 'orange', 'orange']
+    colors = ['red', 'red', 'red', 'gray', 'gray', 'gray']
     # borough of bite
     plt.figure(figsize=(7, 3))
     dogs_train.borough.value_counts().plot.bar(color=colors)
