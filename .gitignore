@@ -4,4 +4,4 @@
 __pycache__
 *.xlsx
 env.py
-telco_churn_data.csv
+*.pptx
