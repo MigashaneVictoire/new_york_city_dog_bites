@@ -81,8 +81,7 @@ The following is a data dictionary for the columns in the DOHMH dog bite dataset
 
 # Steps to Reproduce
   * Clone this repo
-  * Acquire the data
-  * Put the data in the same file as cloned repo
+  * Run the aquire.ipynb and prepare.ipynb (Must to download necessary files)
   * Run the final_report notebook
 
 # Conclusions
